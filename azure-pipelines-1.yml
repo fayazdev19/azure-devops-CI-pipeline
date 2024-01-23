@@ -13,3 +13,10 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial (a67e6591-ec32-480a-834b-d3b3584b8d1c)'
+    appType: 'webApp'
+    WebAppName: 'anjiapsrvvn'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
